@@ -47,7 +47,7 @@
                             {% for email in website.emails %}
                             <tr>
                                 <th scope="row">{{forloop.counter}}</th>
-                                <td>{{email.email}}</td>
+                                <td>{{email.user.email}}</td>
                                 <td>
                                     <button data-email="{{email.email}}" onclick="removeEmail(this)" class="btn btn-outline-danger btn-sm">Remove</button>
                                 </td>

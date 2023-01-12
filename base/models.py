@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from sdtmonitor.utils.strings import get_slug_text
 # Create your models here.
 
 
@@ -43,6 +44,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["email"]
 
     email = models.EmailField(verbose_name="email address", unique=True)
+    username = models.CharField(max_length=255, unique=True, default=get_slug_text)
     objects = UserManager()
 
     def __str__(self):

@@ -4,7 +4,7 @@ def get_app_settings():
     """
     set default settings module or get from environment variable
     """
-    setting = config(
-        "DJANGO_SETTINGS_MODULE", default="sdtmonitor.settings.production", cast=bool
+    setting = os.getenv(
+        "DJANGO_SETTINGS_MODULE", "sdtmonitor.settings.production"
     )
     return setting

@@ -25,7 +25,7 @@ DATABASES["default"]= {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "Olanike$default",
+        "NAME": 'Olanike$default',
         "USER": "Olanike",
         "PASSWORD": '410208olA$$$',
         "HOST": 'Olanike.mysql.pythonanywhere-services.com',

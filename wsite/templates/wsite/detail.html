@@ -47,7 +47,7 @@
                             {% for email in website.emails %}
                             <tr>
                                 <th scope="row">{{forloop.counter}}</th>
-                                <td>{{email.user.email}}</td>
+                                <td>{{email}}</td>
                                 <td>
                                     <button data-email="{{email.email}}" onclick="removeEmail(this)" class="btn btn-outline-danger btn-sm">Remove</button>
                                 </td>
@@ -68,7 +68,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <form action="" method="post" id="email-form">
-            {% csrf_token %}
+            
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Add Email to {{website.name}}</h5>
                 <button type="button" class="text-danger" data-bs-dismiss="modal" aria-label="Close"></button>

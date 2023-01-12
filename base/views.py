@@ -5,6 +5,7 @@ from plan.models import Plan
 from django.contrib.auth.mixins import LoginRequiredMixin
 from base.forms import UserForm
 from wsite.models import Website
+from datetime import datetime
 # Create your views here.
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -28,8 +29,12 @@ class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'dashboard.html'
 
     def greeting(self):
-        '''Function Goes Here'''
-        return 'Good Morning'
+        """Function Goes"""
+        current_date_time = datetime.now()
+        if current_date_time.hour < 12:
+            return 'Good Morning'
+        else:
+            return 'Good Afternoon'
 
     def get_context_data(self, **kwargs):
         context =  super().get_context_data(**kwargs)
